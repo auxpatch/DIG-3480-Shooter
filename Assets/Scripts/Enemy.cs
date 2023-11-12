@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
         }
         else if (HIT.name == "Projectile")
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(2);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(HIT.gameObject);
             Destroy(this.gameObject);

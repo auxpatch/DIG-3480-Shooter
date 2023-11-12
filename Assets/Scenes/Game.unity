@@ -400,7 +400,10 @@ MonoBehaviour:
   enemyTwoPrefab: {fileID: 5396976954991922487, guid: 562d3c56536a9b94b8b49b4e6ef46900, type: 3}
   enemyThreePrefab: {fileID: 8207173182624241605, guid: be4927490c106264787106c0dcb6eabc, type: 3}
   cloudPrefab: {fileID: 2390758221282559787, guid: f0f9490b11fa8f348a73266f1d476c3e, type: 3}
-  LivesText: {fileID: 1241979395}
+  score: 0
+  cloudsMove: 0
+  lifeText: {fileID: 1241979395}
+  scoreText: {fileID: 315078251}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
