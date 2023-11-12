@@ -18,7 +18,8 @@ public class PlayerBehavior : MonoBehaviour
     {
         playerSpeed = 6f;
         lives = 3;
-        Debug.Log(lives);
+        livesText = GameObject.Find("GameManager").GetComponent<GameManager>().livesText;
+        livesText.text = "Lives: " + lives;
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
@@ -58,9 +59,9 @@ public class PlayerBehavior : MonoBehaviour
     public void LoseLife()
     {
         lives--;
-        Debug.Log(lives);
         if (lives <= 0)
         {
+            GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
