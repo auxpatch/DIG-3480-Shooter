@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
-    public GameObject cloudPrefab;
     public GameObject enemyTwoPrefab;
     public GameObject enemyThreePrefab;
+    public GameObject cloudPrefab;
+    public int score;
 
     // Start is called before the first frame update
     void Start()

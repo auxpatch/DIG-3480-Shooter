@@ -6,15 +6,17 @@ public class PlayerBehavior : MonoBehaviour
 {
 
 
+    public GameObject bulletPrefab;
     public float playerSpeed;
     private float horizontalScreenLimit = 10f;
     private float verticalScreenLimit = 4f;
-    public GameObject bulletPrefab;
+    public int lives;
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpeed = 6f;
+        lives = 3;
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
