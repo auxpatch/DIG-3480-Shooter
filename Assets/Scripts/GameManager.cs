@@ -4,16 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject playerPrefab;
     public GameObject enemyOnePrefab;
+    public GameObject cloudPrefab;
     public GameObject enemyTwoPrefab;
     public GameObject enemyThreePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("CreateEnemyOne", 1.0f, 3.0f);
-        InvokeRepeating("CreateEnemyTwo", 2.0f, 4.0f);
-        InvokeRepeating("CreateEnemyThree", 0.5f, 5.0f);
+        Instantiate(playerPrefab, transform.position, Quaternion.identity);
+        CreateSky();
+        InvokeRepeating("SpawnEnemyOne", 1f, 2f);
+        InvokeRepeating("SpawnEnemyTwo", 2f, 4f);
+        InvokeRepeating("SpawnEnemyThree", 3f, 5f);
+
     }
 
     // Update is called once per frame
@@ -22,18 +27,26 @@ public class GameManager : MonoBehaviour
 
     }
 
-    void CreateEnemyOne()
+    void SpawnEnemyOne()
     {
-        Instantiate(enemyOnePrefab, new Vector3(Random.Range(-6, 9), 7, 0), Quaternion.identity);
+        Instantiate(enemyOnePrefab, new Vector3(Random.Range(-8, 8), 7.5f, 0), Quaternion.Euler(0, 0, 180));
     }
 
-    void CreateEnemyTwo()
+    void SpawnEnemyTwo()
     {
-        Instantiate(enemyTwoPrefab, new Vector3(Random.Range(-8, 4), 7, 0), Quaternion.identity);
+        Instantiate(enemyTwoPrefab, new Vector3(Random.Range(-9, 9), 8.5f, 0), Quaternion.Euler(0, 0, 180));
     }
 
-    void CreateEnemyThree()
+    void SpawnEnemyThree()
     {
-        Instantiate(enemyThreePrefab, new Vector3(Random.Range(-7, 7), 7, 0), Quaternion.identity);
+        Instantiate(enemyThreePrefab, new Vector3(Random.Range(-9, 9), 6.5f, 0), Quaternion.Euler(0, 0, 180));
+    }
+
+    void CreateSky()
+    {
+        for (int i = 0; i < 45; i++)
+        {
+            Instantiate(cloudPrefab, new Vector3(Random.Range(-11f, 11f), Random.Range(-7.5f, 7.5f), 0), Quaternion.identity);
+        }   
     }
 }

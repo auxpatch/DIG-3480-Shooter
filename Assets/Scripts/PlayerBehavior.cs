@@ -6,21 +6,15 @@ public class PlayerBehavior : MonoBehaviour
 {
 
 
-    public float speed;
-    public float horizontalInput;
-    public float verticalInput;
-    public float horizontalScreenLimit;
-    public float middleScreen;
-    public float bottomScreen;
+    public float playerSpeed;
+    private float horizontalScreenLimit = 10f;
+    private float verticalScreenLimit = 4f;
     public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = 4f;
-        horizontalScreenLimit = 9.5f;
-        middleScreen = 0f;
-        bottomScreen = -2.5f;
+        playerSpeed = 6f;
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
@@ -32,25 +26,18 @@ public class PlayerBehavior : MonoBehaviour
 
     void Movement()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0) * Time.deltaTime * speed);
-        if (transform.position.x > horizontalScreenLimit)
+        transform.Translate(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) * Time.deltaTime * playerSpeed);
+        if (transform.position.x > horizontalScreenLimit || transform.position.x <= -horizontalScreenLimit)
         {
-            transform.position = new Vector3(-horizontalScreenLimit, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x * -1f, transform.position.y, 0);
         }
-        else if (transform.position.x < -horizontalScreenLimit)
+        if (transform.position.y < -verticalScreenLimit)
         {
-            transform.position = new Vector3(horizontalScreenLimit, transform.position.y, 0);
+            transform.position = new Vector3(transform.position.x, -verticalScreenLimit, 0);
         }
-
-        if (transform.position.y >= middleScreen)
+        else if (transform.position.y >= 0)
         {
-            transform.position = new Vector3(transform.position.x, middleScreen, 0);
-        }
-        else if (transform.position.y <= bottomScreen)
-        {
-            transform.position = new Vector3(transform.position.x, bottomScreen, 0);
+            transform.position = new Vector3(transform.position.x, 0, 0);
         }
     }
 
