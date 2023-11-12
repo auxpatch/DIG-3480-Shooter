@@ -7,6 +7,7 @@ public class PlayerBehavior : MonoBehaviour
 
 
     public GameObject bulletPrefab;
+    public GameObject explosionPrefab;
     public float playerSpeed;
     private float horizontalScreenLimit = 10f;
     private float verticalScreenLimit = 4f;
@@ -17,6 +18,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         playerSpeed = 6f;
         lives = 3;
+        Debug.Log(lives);
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
@@ -50,6 +52,17 @@ public class PlayerBehavior : MonoBehaviour
         {
             //create a bullet
             Instantiate(bulletPrefab, transform.position + new Vector3(0, 1, 0), Quaternion.identity);
+        }
+    }
+
+    public void LoseLife()
+    {
+        lives--;
+        Debug.Log(lives);
+        if (lives <= 0)
+        {
+            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }

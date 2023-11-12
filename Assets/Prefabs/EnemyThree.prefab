@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1052785542260417239}
   - component: {fileID: -7037305736511359286}
   - component: {fileID: 1578042103913836761}
+  - component: {fileID: 9072691375871306298}
   m_Layer: 0
   m_Name: enemyThree
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,3 +173,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.1161137, y: 1.7307706}
   m_EdgeRadius: 0
+--- !u!114 &9072691375871306298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8207173182624241605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c86a51da5e494caa4e725e4e3f93d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 4107736733885003850, guid: b1d6c9c47cf15ee40ab0ab9315510280, type: 3}
