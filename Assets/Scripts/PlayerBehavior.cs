@@ -70,4 +70,15 @@ public class PlayerBehavior : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public void GainLife()
+    {
+        lives += 1;
+        lifeText.text = "Lives:" + lives;
+        if (lives >= 3)
+        {
+            lives = 3;
+            lifeText.text = "Lives:" + lives;
+        }
+    }
 }

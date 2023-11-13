@@ -3,7 +3,15 @@ guid: 53e60eaef90a64146abb8c24730843c6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerPrefab: {fileID: 8500302032083744059, guid: 110c550d785e21b4bab9383c6fa3bc99, type: 3}
+  - enemyOnePrefab: {fileID: 4950820606262390925, guid: bf5ca7cad64797b4890429aa53f2d44c, type: 3}
+  - enemyTwoPrefab: {fileID: 5396976954991922487, guid: 562d3c56536a9b94b8b49b4e6ef46900, type: 3}
+  - enemyThreePrefab: {fileID: 8207173182624241605, guid: be4927490c106264787106c0dcb6eabc, type: 3}
+  - powerUpPrefab: {fileID: 201402846514379822, guid: ea6f963aee70b494ab5f72094f837c6a, type: 3}
+  - cloudPrefab: {fileID: 2390758221282559787, guid: f0f9490b11fa8f348a73266f1d476c3e, type: 3}
+  - lifeText: {instanceID: 0}
+  - scoreText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -33,8 +33,8 @@ public class MovingObjects : MonoBehaviour
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 7f);
         } else if (objectType == 5)
         {
-            //You are a coin
-            transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * 3f);
+            //You are powerUp
+            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5f);
         }
 
         if (transform.position.y > 11f || transform.position.y < -11f)
