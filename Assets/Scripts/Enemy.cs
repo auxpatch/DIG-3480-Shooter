@@ -27,7 +27,7 @@ public class Enemy : MonoBehaviour
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
-        else if (HIT.name == "Projectile")
+        else if (HIT.tag == "Projectile")
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().EarnScore(2);
             Instantiate(explosionPrefab, transform.position, Quaternion.identity);
