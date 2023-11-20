@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83159dae9723be4438ca02fd14748d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinSound: {fileID: 0}
 --- !u!114 &2165340025207938609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42a8232d7b40f74fbd6c319bdd005cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: 5
+  objectType: 6
 --- !u!58 &1427688693565437645
 CircleCollider2D:
   m_ObjectHideFlags: 0
