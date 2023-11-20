@@ -67,8 +67,14 @@ public class PlayerBehavior : MonoBehaviour
 
     public void LoseLife()
     {
-        lives--;
-        lifeText.text = "Lives: " + lives;
+        
+        if (shield >= 1)
+        {
+            LoseShield();
+        } else
+            lives--;
+            lifeText.text = "Lives: " + lives;
+        
         if (lives <= 0)
         {
             GameObject.Find("GameManager").GetComponent<GameManager>().GameOver();
