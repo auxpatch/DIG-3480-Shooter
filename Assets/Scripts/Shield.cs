@@ -20,7 +20,7 @@ public class Shield : MonoBehaviour
         if (HIT.tag == "Player")
         {
             HIT.GetComponent<PlayerBehavior>().GainShield();
-
+            HIT.GetComponent<PlayerBehavior>().ShieldActive();
             Destroy(this.gameObject);
         }
     }

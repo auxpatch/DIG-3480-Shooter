@@ -17,6 +17,7 @@ public class PlayerBehavior : MonoBehaviour
     public TextMeshProUGUI lifeText;
     public int shield;
     public TextMeshProUGUI shieldText;
+    private bool _shieldActive; 
 
 
     // Start is called before the first frame update
@@ -29,6 +30,7 @@ public class PlayerBehavior : MonoBehaviour
         lifeText.text = "Lives: " + lives;
         shieldText = GameObject.Find("GameManager").GetComponent<GameManager>().shieldText;
         shieldText.text = "Shield: " + shield;
+        _shieldActive = false;
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
@@ -94,10 +96,19 @@ public class PlayerBehavior : MonoBehaviour
         }
     }
 
+    public void ShieldActive()
+    {
+        _shieldActive = true;
+    }
+
     public void GainShield()
     {
         shield += 1;
         shieldText.text = "Shield: " + shield;
+        if (shield >= 1)
+        {
+
+        }
         if (shield >= 3)
         {
             shield = 3;
@@ -109,6 +120,11 @@ public class PlayerBehavior : MonoBehaviour
     {
         if (shield <= 0)
         {
+            if (_shieldActive == true)
+            {
+                _shieldActive = false;
+                return;
+            }
             LoseLife();
             shield = 0;
             shieldText.text = "Shield :" + shield;
