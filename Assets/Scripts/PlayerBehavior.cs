@@ -15,14 +15,20 @@ public class PlayerBehavior : MonoBehaviour
     private float verticalScreenLimit = 4f;
     public int lives;
     public TextMeshProUGUI lifeText;
+    public int shield;
+    public TextMeshProUGUI shieldText;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerSpeed = 6f;
+        shield = 0;
         lives = 3;
         lifeText = GameObject.Find("GameManager").GetComponent<GameManager>().lifeText;
         lifeText.text = "Lives: " + lives;
+        shieldText = GameObject.Find("GameManager").GetComponent<GameManager>().shieldText;
+        shieldText.text = "Shield: " + shield;
     }
 
     // Update is called once per frame; if your computer runs at 60 fps
@@ -81,4 +87,28 @@ public class PlayerBehavior : MonoBehaviour
             lifeText.text = "Lives:" + lives;
         }
     }
+
+    public void GainShield()
+    {
+        shield += 1;
+        shieldText.text = "Shield: " + shield;
+        if (shield >= 3)
+        {
+            shield = 3;
+            shieldText.text = "Shield :" + shield;
+        }
+    }
+
+    public void LoseShield()
+    {
+        if (shield <= 0)
+        {
+            LoseLife();
+            shield = 0;
+            shieldText.text = "Shield :" + shield;
+        }
+        shield--;
+        shieldText.text = "Shield: " + shield;
+    }
+
 }

@@ -15,7 +15,7 @@ public class MovingObjects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(objectType == 1)
+        if (objectType == 1)
         {
             //You are a bullet
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 8f);
@@ -35,6 +35,14 @@ public class MovingObjects : MonoBehaviour
         {
             //You are powerUp
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5f);
+        } else if (objectType == 6)
+        {
+            //You are coin
+            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 3f);
+        } else if (objectType == 7)
+        {
+            //You are shield
+            transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 4f);
         }
 
         if (transform.position.y > 11f || transform.position.y < -11f)

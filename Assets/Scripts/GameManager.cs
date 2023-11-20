@@ -12,10 +12,13 @@ public class GameManager : MonoBehaviour
     public GameObject enemyThreePrefab;
     public GameObject powerUpPrefab;
     public GameObject cloudPrefab;
+    public GameObject coinPrefab;
+    public GameObject shieldPrefab;
     public int score;
     public int cloudsMove;
     public TextMeshProUGUI lifeText;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI shieldText;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,8 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnEnemyTwo", 2f, 4f);
         InvokeRepeating("SpawnEnemyThree", 3f, 5f);
         InvokeRepeating("SpawnPowerUp", 3f, 4f);
+        InvokeRepeating("SpawnCoin", 2f, 4f);
+        InvokeRepeating("SpawnShield", 2f, 5f);
         cloudsMove = 1;
         score = 0;
         scoreText.text = "Score: " + score;
@@ -56,6 +61,16 @@ public class GameManager : MonoBehaviour
     void SpawnPowerUp()
     {
         Instantiate(powerUpPrefab, new Vector3(Random.Range(-9, 9), 7.5f, 0), Quaternion.Euler(0, 0, 180));
+    }
+
+    void SpawnCoin()
+    {
+        Instantiate(coinPrefab, new Vector3(Random.Range(-9, 9), 7.5f, 0), Quaternion.Euler(0, 0, 180));
+    }
+
+    void SpawnShield()
+    {
+        Instantiate(shieldPrefab, new Vector3(Random.Range(-9, 9), 6.5f, 0), Quaternion.Euler(0, 0, 180));
     }
 
     void CreateSky()
