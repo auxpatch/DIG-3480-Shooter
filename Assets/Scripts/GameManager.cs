@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemyOnePrefab;
     public GameObject enemyTwoPrefab;
     public GameObject enemyThreePrefab;
-    public GameObject powerUpPrefab;
+    public GameObject lifeUpPrefab;
     public GameObject cloudPrefab;
     public GameObject coinPrefab;
     public GameObject shieldPrefab;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         InvokeRepeating("SpawnEnemyOne", 1f, 2f);
         InvokeRepeating("SpawnEnemyTwo", 2f, 4f);
         InvokeRepeating("SpawnEnemyThree", 3f, 5f);
-        InvokeRepeating("SpawnPowerUp", 3f, 4f);
+        InvokeRepeating("SpawnLifeUp", 3f, 4f);
         InvokeRepeating("SpawnCoin", 2f, 4f);
         InvokeRepeating("SpawnShield", 2f, 5f);
         cloudsMove = 1;
@@ -58,9 +58,9 @@ public class GameManager : MonoBehaviour
         Instantiate(enemyThreePrefab, new Vector3(Random.Range(-9, 9), 6.5f, 0), Quaternion.Euler(0, 0, 180));
     }
 
-    void SpawnPowerUp()
+    void SpawnLifeUp()
     {
-        Instantiate(powerUpPrefab, new Vector3(Random.Range(-9, 9), 7.5f, 0), Quaternion.Euler(0, 0, 180));
+        Instantiate(lifeUpPrefab, new Vector3(Random.Range(-9, 9), 7.5f, 0), Quaternion.Euler(0, 0, 180));
     }
 
     void SpawnCoin()

@@ -33,7 +33,7 @@ public class MovingObjects : MonoBehaviour
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 7f);
         } else if (objectType == 5)
         {
-            //You are powerUp
+            //You are lifeUp
             transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * 5f);
         } else if (objectType == 6)
         {

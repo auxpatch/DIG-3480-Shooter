@@ -399,7 +399,7 @@ MonoBehaviour:
   enemyOnePrefab: {fileID: 4950820606262390925, guid: bf5ca7cad64797b4890429aa53f2d44c, type: 3}
   enemyTwoPrefab: {fileID: 5396976954991922487, guid: 562d3c56536a9b94b8b49b4e6ef46900, type: 3}
   enemyThreePrefab: {fileID: 8207173182624241605, guid: be4927490c106264787106c0dcb6eabc, type: 3}
-  powerUpPrefab: {fileID: 201402846514379822, guid: ea6f963aee70b494ab5f72094f837c6a, type: 3}
+  lifeUpPrefab: {fileID: 2889984114785100880, guid: 8cb90a266b4334442818c8e87a4544ee, type: 3}
   cloudPrefab: {fileID: 2390758221282559787, guid: f0f9490b11fa8f348a73266f1d476c3e, type: 3}
   coinPrefab: {fileID: 6365171659116895610, guid: 7a5c3f0962fd09d4c814c18284977d7e, type: 3}
   shieldPrefab: {fileID: 3724702447672075548, guid: 9ebe82eae3ec67a46b92fb5e0d8b465a, type: 3}

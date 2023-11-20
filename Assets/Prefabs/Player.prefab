@@ -211,6 +211,8 @@ MonoBehaviour:
   playerSpeed: 0
   lives: 0
   lifeText: {fileID: 0}
+  shield: 0
+  shieldText: {fileID: 0}
 --- !u!61 &97958186505335737
 BoxCollider2D:
   m_ObjectHideFlags: 0

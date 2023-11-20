@@ -20,6 +20,7 @@ public class PlayerBehavior : MonoBehaviour
     private bool _shieldActive; 
 
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,7 @@ public class PlayerBehavior : MonoBehaviour
         if (shield >= 1)
         {
             LoseShield();
+
         } else
             lives--;
             lifeText.text = "Lives: " + lives;
